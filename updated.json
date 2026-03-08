@@ -1,0 +1,1433 @@
+[
+    {
+        "uuid": "irmZubro",
+        "title": "Early career decision: Service-based DevOps vs Product Support role at a large product company",
+        "slug": "early-career-decision-service-based-devo-hney",
+        "summary": "Current situation:Working as a DevOps engineer at a service-based company for ~2 years now. Most work currently involves:\nSystem administration and infrastructure operations\nMonitoring stacks (Grafana / Prometheus / ELK etc.)\nManaging deployments and",
+        "author": {
+            "realName": "Anonymous User",
+            "userAvatar": "https://assets.leetcode.com/users/default_avatar.jpg",
+            "userSlug": "",
+            "userName": null,
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": null
+        },
+        "isOwner": false,
+        "isAnonymous": true,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-08T12:07:18.346518+00:00",
+        "updatedAt": "2026-03-08T12:07:56.213549+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7634847,
+        "hitCount": 5,
+        "reactions": [],
+        "tags": [
+            {
+                "name": "Career",
+                "slug": "career",
+                "tagType": null
+            },
+            {
+                "name": "Feedback",
+                "slug": "feedback",
+                "tagType": null
+            },
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            }
+        ],
+        "topic": {
+            "id": 7634847,
+            "topLevelCommentCount": 0
+        }
+    },
+    {
+        "uuid": "2E3Lduqf",
+        "title": "\ud83d\ude80 How do you avoid common mistakes when solving LeetCode problems? Share your approaches! ",
+        "slug": "how-do-you-avoid-common-mistakes-when-so-hb5s",
+        "summary": "Hey everyone! \ud83d\udc4bI've been grinding LeetCode for a while now, and I keep running into the same frustrating cycle \u2014 I understand the problem, think I have the solution, code it up... and then hit WA (Wrong Answer) or TLE (Time Limit Exceeded). Sometimes",
+        "author": {
+            "realName": "Golden_CSE45",
+            "userAvatar": "https://assets.leetcode.com/users/Golden_CSE45/avatar_1772737209.png",
+            "userSlug": "Golden_CSE45",
+            "userName": "Golden_CSE45",
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": null
+        },
+        "isOwner": false,
+        "isAnonymous": false,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-08T11:27:27.633994+00:00",
+        "updatedAt": "2026-03-08T11:27:27.633994+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7634772,
+        "hitCount": 64,
+        "reactions": [
+            {
+                "count": 1,
+                "reactionType": "UPVOTE"
+            }
+        ],
+        "tags": [
+            {
+                "name": "LeetCode",
+                "slug": "leetcode",
+                "tagType": "COMPANY"
+            },
+            {
+                "name": "Career",
+                "slug": "career",
+                "tagType": null
+            },
+            {
+                "name": "Compensation",
+                "slug": "compensation",
+                "tagType": null
+            },
+            {
+                "name": "DSA",
+                "slug": "dsa",
+                "tagType": null
+            },
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            },
+            {
+                "name": "Data Structure and Algorithms",
+                "slug": "ds-and-algorithm",
+                "tagType": null
+            },
+            {
+                "name": "DSA Java",
+                "slug": "dsa-java",
+                "tagType": null
+            },
+            {
+                "name": "daily dsa session",
+                "slug": "daily-dsa-session",
+                "tagType": null
+            },
+            {
+                "name": "DSA X LIFE",
+                "slug": "dsa-x-life",
+                "tagType": null
+            },
+            {
+                "name": "OA | DSA | System / Logic",
+                "slug": "oa-dsa-system-logic",
+                "tagType": null
+            }
+        ],
+        "topic": {
+            "id": 7634772,
+            "topLevelCommentCount": 2
+        }
+    },
+    {
+        "uuid": "xrvYad7e",
+        "title": "Opening for React native developers",
+        "slug": "opening-for-react-native-developers-by-x-z6hu",
+        "summary": "Looking for 3-6 years experienced developers having good working experience on React Native, deep understanding of fundamentals, security, state mgmt.\nReach out to meredesk",
+        "author": {
+            "realName": "Siraj Mustaidi",
+            "userAvatar": "https://assets.leetcode.com/users/xQAgenI6cE/avatar_1772435307.png",
+            "userSlug": "xQAgenI6cE",
+            "userName": "xQAgenI6cE",
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": null
+        },
+        "isOwner": false,
+        "isAnonymous": false,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-08T11:08:49.771375+00:00",
+        "updatedAt": "2026-03-08T11:08:49.771375+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7634730,
+        "hitCount": 15,
+        "reactions": [],
+        "tags": [
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            }
+        ],
+        "topic": {
+            "id": 7634730,
+            "topLevelCommentCount": 0
+        }
+    },
+    {
+        "uuid": "FI9N0xAg",
+        "title": "PREFIX SUM \u2014 COMPLETE NOTES",
+        "slug": "prefix-sum-complete-notes-by-anonymous_u-bwwr",
+        "summary": "PREFIX SUM \u2014 COMPLETE NOTES1. The Core Problem Prefix Sum SolvesMany problems repeatedly ask:Example array:Example queries:2. Naive Approach (Brute Force)To find sum from L to R:Example:3. Why This Becomes a ProblemIf:Each query takes O(N) time.Total",
+        "author": {
+            "realName": "Anonymous User",
+            "userAvatar": "https://assets.leetcode.com/users/default_avatar.jpg",
+            "userSlug": "",
+            "userName": null,
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": null
+        },
+        "isOwner": false,
+        "isAnonymous": true,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-08T08:41:07.626813+00:00",
+        "updatedAt": "2026-03-08T08:41:07.626813+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7634406,
+        "hitCount": 151,
+        "reactions": [
+            {
+                "count": 10,
+                "reactionType": "UPVOTE"
+            }
+        ],
+        "tags": [
+            {
+                "name": "Amazon",
+                "slug": "amazon",
+                "tagType": "COMPANY"
+            },
+            {
+                "name": "Career",
+                "slug": "career",
+                "tagType": null
+            },
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            }
+        ],
+        "topic": {
+            "id": 7634406,
+            "topLevelCommentCount": 0
+        }
+    },
+    {
+        "uuid": "eLRngLqZ",
+        "title": "Booking Holdings : Onsite Prep",
+        "slug": "booking-holdings-onsite-prep-by-anonymou-gy28",
+        "summary": "Recruiter reached out asking for last week of March.\nJust wanted to know who all are going to appear there for the Interview and whats your prep status.Also would highly appreciate if someone could share their latest Interview Experience.Thanks in ad",
+        "author": {
+            "realName": "Anonymous User",
+            "userAvatar": "https://assets.leetcode.com/users/default_avatar.jpg",
+            "userSlug": "",
+            "userName": null,
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": null
+        },
+        "isOwner": false,
+        "isAnonymous": true,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-08T06:16:18.497072+00:00",
+        "updatedAt": "2026-03-08T06:16:50.473081+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7634077,
+        "hitCount": 217,
+        "reactions": [
+            {
+                "count": 2,
+                "reactionType": "UPVOTE"
+            }
+        ],
+        "tags": [
+            {
+                "name": "Technical Interview",
+                "slug": "technical-interview",
+                "tagType": "COMPANY"
+            },
+            {
+                "name": "interview experience",
+                "slug": "interview-experience",
+                "tagType": null
+            },
+            {
+                "name": "Booking.com",
+                "slug": "booking-com",
+                "tagType": null
+            },
+            {
+                "name": "interview question",
+                "slug": "interview-question",
+                "tagType": null
+            },
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            },
+            {
+                "name": "Behavioral Interview",
+                "slug": "behavioral-interview",
+                "tagType": null
+            }
+        ],
+        "topic": {
+            "id": 7634077,
+            "topLevelCommentCount": 2
+        }
+    },
+    {
+        "uuid": "beBKfLBX",
+        "title": "Swiggy | SDE2 | 2nd Round | LLD Round",
+        "slug": "swiggy-sde2-2nd-round-lld-round-by-anony-9e00",
+        "summary": "I have LLD Round(2nd round) in next week.\nWhat kind of questions i can expect.\nCan someone share recently asked questions?",
+        "author": {
+            "realName": "Anonymous User",
+            "userAvatar": "https://assets.leetcode.com/users/default_avatar.jpg",
+            "userSlug": "",
+            "userName": null,
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": null
+        },
+        "isOwner": false,
+        "isAnonymous": true,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-08T05:54:47.685848+00:00",
+        "updatedAt": "2026-03-08T05:55:35.018464+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7634010,
+        "hitCount": 212,
+        "reactions": [
+            {
+                "count": 3,
+                "reactionType": "UPVOTE"
+            }
+        ],
+        "tags": [
+            {
+                "name": "Swiggy",
+                "slug": "swiggy",
+                "tagType": "COMPANY"
+            },
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            }
+        ],
+        "topic": {
+            "id": 7634010,
+            "topLevelCommentCount": 1
+        }
+    },
+    {
+        "uuid": "pTgAv02J",
+        "title": "Lenskart Prep- need help",
+        "slug": "lenskart-prep-need-help-by-anonymous_use-7jn9",
+        "summary": "Hi, I have my second round of interview with Lenskart scheduled, and it will be a System Design round.If anyone has recently attended the Lenskart interview process, could you please share your experience? It would be helpful to know:\nThe type of sys",
+        "author": {
+            "realName": "Anonymous User",
+            "userAvatar": "https://assets.leetcode.com/users/default_avatar.jpg",
+            "userSlug": "",
+            "userName": null,
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": null
+        },
+        "isOwner": false,
+        "isAnonymous": true,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-08T06:49:08.324376+00:00",
+        "updatedAt": "2026-03-08T06:49:08.324376+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7634153,
+        "hitCount": 44,
+        "reactions": [
+            {
+                "count": 1,
+                "reactionType": "UPVOTE"
+            }
+        ],
+        "tags": [
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            }
+        ],
+        "topic": {
+            "id": 7634153,
+            "topLevelCommentCount": 0
+        }
+    },
+    {
+        "uuid": "nffn9T4N",
+        "title": "Trying to understand the change in interview process",
+        "slug": "trying-to-understand-the-change-in-inter-s1fk",
+        "summary": "Has the SWE interview process changed lately? Are companies still following the usual pattern of LeetCode-style coding + System Design + LLD, or has the format evolved with the rise of AI/GenAI tools?Curious if the focus is still heavily on algorithm",
+        "author": {
+            "realName": "Anonymous User",
+            "userAvatar": "https://assets.leetcode.com/users/default_avatar.jpg",
+            "userSlug": "",
+            "userName": null,
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": null
+        },
+        "isOwner": false,
+        "isAnonymous": true,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-08T06:18:07.322805+00:00",
+        "updatedAt": "2026-03-08T06:18:07.322805+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7634084,
+        "hitCount": 43,
+        "reactions": [],
+        "tags": [
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            }
+        ],
+        "topic": {
+            "id": 7634084,
+            "topLevelCommentCount": 0
+        }
+    },
+    {
+        "uuid": "LvDBf5zi",
+        "title": "Goldman Sachs Associate SDE - Team fit questions",
+        "slug": "goldman-sachs-associate-sde-team-fit-que-x2eb",
+        "summary": "What can I expect in a 45 min \"Team Fit\" round post superday? Technical/Behavioural questions?\nIs this the final round or are there more rounds after this?\nRole: Associate SDE, USA",
+        "author": {
+            "realName": "Anonymous User",
+            "userAvatar": "https://assets.leetcode.com/users/default_avatar.jpg",
+            "userSlug": "",
+            "userName": null,
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": null
+        },
+        "isOwner": false,
+        "isAnonymous": true,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-08T02:17:40.452950+00:00",
+        "updatedAt": "2026-03-08T02:32:53.980698+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7633464,
+        "hitCount": 188,
+        "reactions": [],
+        "tags": [
+            {
+                "name": "Goldman Sachs",
+                "slug": "goldman-sachs",
+                "tagType": "COMPANY"
+            },
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            },
+            {
+                "name": "team-fit",
+                "slug": "team-fit",
+                "tagType": null
+            }
+        ],
+        "topic": {
+            "id": 7633464,
+            "topLevelCommentCount": 1
+        }
+    },
+    {
+        "uuid": "VqsYQUa3",
+        "title": "Anyone recently had HLD or Hiring Manager round at Amazon?",
+        "slug": "anyone-recently-had-hld-or-hiring-manage-n41f",
+        "summary": "Hi everyone,I have an upcoming High-Level Design (HLD) and Hiring Manager round scheduled with Amazon. If anyone has recently gone through these rounds, it would be really helpful if you could share your experience - what kind of questions were asked",
+        "author": {
+            "realName": "Anonymous User",
+            "userAvatar": "https://assets.leetcode.com/users/default_avatar.jpg",
+            "userSlug": "",
+            "userName": null,
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": null
+        },
+        "isOwner": false,
+        "isAnonymous": true,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-07T17:20:18.147143+00:00",
+        "updatedAt": "2026-03-07T17:20:18.147143+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7632877,
+        "hitCount": 225,
+        "reactions": [
+            {
+                "count": 2,
+                "reactionType": "UPVOTE"
+            }
+        ],
+        "tags": [
+            {
+                "name": "Career",
+                "slug": "career",
+                "tagType": null
+            },
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            }
+        ],
+        "topic": {
+            "id": 7632877,
+            "topLevelCommentCount": 2
+        }
+    },
+    {
+        "uuid": "aIozGwjo",
+        "title": "Career Advice Needed",
+        "slug": "career-advice-needed-by-anonymous_user-mept",
+        "summary": "Total work exp: 3.5\nClg: Tier 1\nCurrent componestaion: 40 LPA (21 base + 19 lakhs of rsu yearly vested)\nCompany: Top PBCI am working in one of the top PBC and above are the compensation details I am starting to look for a switch, currently I have a v",
+        "author": {
+            "realName": "Anonymous User",
+            "userAvatar": "https://assets.leetcode.com/users/default_avatar.jpg",
+            "userSlug": "",
+            "userName": null,
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": null
+        },
+        "isOwner": false,
+        "isAnonymous": true,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-07T18:41:29.733007+00:00",
+        "updatedAt": "2026-03-07T18:41:29.733007+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7633075,
+        "hitCount": 249,
+        "reactions": [
+            {
+                "count": 1,
+                "reactionType": "UPVOTE"
+            },
+            {
+                "count": 0,
+                "reactionType": "THUMBS_DOWN"
+            }
+        ],
+        "tags": [
+            {
+                "name": "Career",
+                "slug": "career",
+                "tagType": null
+            },
+            {
+                "name": "Feedback",
+                "slug": "feedback",
+                "tagType": null
+            },
+            {
+                "name": "Compensation",
+                "slug": "compensation",
+                "tagType": null
+            },
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            }
+        ],
+        "topic": {
+            "id": 7633075,
+            "topLevelCommentCount": 1
+        }
+    },
+    {
+        "uuid": "p82SHdPV",
+        "title": "What Helped Me Finally Get Better at System Design & ML System Design Interviews",
+        "slug": "what-helped-me-finally-get-better-at-sys-g1au",
+        "summary": "What Helped Me Finally Get Better at System Design & ML System Design InterviewsOver the past few years I\u2019ve gone through quite a few interviews across startups and big tech. One thing I kept noticing is that system design interviews are the biggest",
+        "author": {
+            "realName": "Anonymous User",
+            "userAvatar": "https://assets.leetcode.com/users/default_avatar.jpg",
+            "userSlug": "",
+            "userName": null,
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": null
+        },
+        "isOwner": false,
+        "isAnonymous": true,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-07T19:03:17.547081+00:00",
+        "updatedAt": "2026-03-07T19:03:17.547081+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7633117,
+        "hitCount": 339,
+        "reactions": [
+            {
+                "count": 4,
+                "reactionType": "UPVOTE"
+            },
+            {
+                "count": 3,
+                "reactionType": "THUMBS_DOWN"
+            }
+        ],
+        "tags": [
+            {
+                "name": "Career",
+                "slug": "career",
+                "tagType": null
+            },
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            }
+        ],
+        "topic": {
+            "id": 7633117,
+            "topLevelCommentCount": 1
+        }
+    },
+    {
+        "uuid": "m1FdqSyc",
+        "title": "Career Advice Needed !!!",
+        "slug": "career-advice-needed-by-anonymous_user-rjb5",
+        "summary": "Background :College : Tier1\nCompany : Inmobi\nYOE :  3.8\nYOE in current company : 0.9 months\nCurrent CTC : 30 base + 2.5 Joining bonus + 5 lakh ruppees RSU unitsWorking as a platform engg. which manages the CI system for the organization. Redundant Wo",
+        "author": {
+            "realName": "Anonymous User",
+            "userAvatar": "https://assets.leetcode.com/users/default_avatar.jpg",
+            "userSlug": "",
+            "userName": null,
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": null
+        },
+        "isOwner": false,
+        "isAnonymous": true,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-07T19:32:46.129060+00:00",
+        "updatedAt": "2026-03-07T19:32:46.129060+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7633155,
+        "hitCount": 341,
+        "reactions": [],
+        "tags": [
+            {
+                "name": "InMobi",
+                "slug": "inmobi",
+                "tagType": "COMPANY"
+            },
+            {
+                "name": "Sprinklr",
+                "slug": "sprinklr",
+                "tagType": "COMPANY"
+            },
+            {
+                "name": "Career",
+                "slug": "career",
+                "tagType": null
+            },
+            {
+                "name": "Feedback",
+                "slug": "feedback",
+                "tagType": null
+            },
+            {
+                "name": "Compensation",
+                "slug": "compensation",
+                "tagType": null
+            },
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            }
+        ],
+        "topic": {
+            "id": 7633155,
+            "topLevelCommentCount": 0
+        }
+    },
+    {
+        "uuid": "jwzAZewZ",
+        "title": "Cleartrip SDE-1 Offer (1.8 YOE) \u2013 Is this a good compensation",
+        "slug": "cleartrip-sde-1-offer-18-yoe-is-this-a-g-tr8q",
+        "summary": "Education: B.Tech from Tier 2\nYears of Experience: 1.8 years\ncurrent title- Senior Software Engineer\nExperience: very good MNC\ncurrent salary- 16.5 LPA(13 base + bonus)Company: Cleartrip\nTitle: SDE 1\nLocation: Bangalore\nBase Salary: 20 LPA\nPerf. Bonu",
+        "author": {
+            "realName": "Anonymous User",
+            "userAvatar": "https://assets.leetcode.com/users/default_avatar.jpg",
+            "userSlug": "",
+            "userName": null,
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": null
+        },
+        "isOwner": false,
+        "isAnonymous": true,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-07T14:31:23.579927+00:00",
+        "updatedAt": "2026-03-07T14:40:50.119969+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7632537,
+        "hitCount": 627,
+        "reactions": [],
+        "tags": [
+            {
+                "name": "Career",
+                "slug": "career",
+                "tagType": null
+            },
+            {
+                "name": "Feedback",
+                "slug": "feedback",
+                "tagType": null
+            },
+            {
+                "name": "Compensation",
+                "slug": "compensation",
+                "tagType": null
+            },
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            }
+        ],
+        "topic": {
+            "id": 7632537,
+            "topLevelCommentCount": 3
+        }
+    },
+    {
+        "uuid": "2h4nkX8j",
+        "title": "\ud83d\udd25 Honest Poll for People Preparing for Google Interviews",
+        "slug": "honest-poll-for-people-preparing-for-goo-djwn",
+        "summary": "Every week people grind the \u201cTop / Most Tagged Google Questions\u201d list on LeetCode.But the list keeps changing constantly.So I\u2019m genuinely curious:How useful are these questions actually in real Google interviews?\ud83d\udcca Poll:Very useful \u2014 I\u2019ve seen the sam",
+        "author": {
+            "realName": "Anonymous User",
+            "userAvatar": "https://assets.leetcode.com/users/default_avatar.jpg",
+            "userSlug": "",
+            "userName": null,
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": null
+        },
+        "isOwner": false,
+        "isAnonymous": true,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-07T11:31:39.398289+00:00",
+        "updatedAt": "2026-03-07T11:31:39.398289+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7632214,
+        "hitCount": 631,
+        "reactions": [
+            {
+                "count": 6,
+                "reactionType": "UPVOTE"
+            }
+        ],
+        "tags": [
+            {
+                "name": "Google",
+                "slug": "google",
+                "tagType": "COMPANY"
+            },
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            }
+        ],
+        "topic": {
+            "id": 7632214,
+            "topLevelCommentCount": 5
+        }
+    },
+    {
+        "uuid": "hOwciGkW",
+        "title": "Uber BPS Interview Experience SSE",
+        "slug": "uber-bps-interview-experience-sse-by-ano-biqn",
+        "summary": "Helping the Leetcode Community!Below question was asked :I really f**ked up my interview as I couldn't get this easiest question.Is there any chance I can get a re-attempt?",
+        "author": {
+            "realName": "Anonymous User",
+            "userAvatar": "https://assets.leetcode.com/users/default_avatar.jpg",
+            "userSlug": "",
+            "userName": null,
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": null
+        },
+        "isOwner": false,
+        "isAnonymous": true,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-07T11:11:30.162861+00:00",
+        "updatedAt": "2026-03-07T11:11:30.162861+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7632183,
+        "hitCount": 406,
+        "reactions": [
+            {
+                "count": 2,
+                "reactionType": "UPVOTE"
+            }
+        ],
+        "tags": [
+            {
+                "name": "Uber",
+                "slug": "uber",
+                "tagType": "COMPANY"
+            },
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            }
+        ],
+        "topic": {
+            "id": 7632183,
+            "topLevelCommentCount": 6
+        }
+    },
+    {
+        "uuid": "rQXYdjGj",
+        "title": "Kotak Interviews ",
+        "slug": "kotak-interviews-by-anonymous_user-jjl0",
+        "summary": "Hi,I have an upcoming interview with Kotak and I have already completed the Bar Raiser round. I wanted to understand what types of questions are usually asked in the remaining rounds.Specifically, I would like to know:What kind of DSA questions are t",
+        "author": {
+            "realName": "Anonymous User",
+            "userAvatar": "https://assets.leetcode.com/users/default_avatar.jpg",
+            "userSlug": "",
+            "userName": null,
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": null
+        },
+        "isOwner": false,
+        "isAnonymous": true,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-07T11:54:16.998801+00:00",
+        "updatedAt": "2026-03-07T11:54:16.998801+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7632266,
+        "hitCount": 348,
+        "reactions": [
+            {
+                "count": 3,
+                "reactionType": "UPVOTE"
+            }
+        ],
+        "tags": [
+            {
+                "name": "System Design",
+                "slug": "system-design",
+                "tagType": null
+            },
+            {
+                "name": "Low Level Design",
+                "slug": "low-level-design",
+                "tagType": null
+            },
+            {
+                "name": "DSA",
+                "slug": "dsa",
+                "tagType": null
+            },
+            {
+                "name": "High Level Design",
+                "slug": "high-level-design",
+                "tagType": null
+            },
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            },
+            {
+                "name": "study guide",
+                "slug": "study-guide",
+                "tagType": null
+            },
+            {
+                "name": "Kotak Mahindra Bank",
+                "slug": "kotak-mahindra-bank",
+                "tagType": "COMPANY"
+            }
+        ],
+        "topic": {
+            "id": 7632266,
+            "topLevelCommentCount": 3
+        }
+    },
+    {
+        "uuid": "YZSLdHKa",
+        "title": "Struggling to Get OAs or Interviews \u2013 Any Advice?",
+        "slug": "struggling-to-get-oas-or-interviews-any-p9c64",
+        "summary": "I\u2019m a 2026 graduate (studying from a TIER-2 college) and interned at a FAANGMUL company. I\u2019m currently actively looking for an SDE-1 role.I\u2019ve been applying to almost every relevant opening I come across. I\u2019ve also tried reaching out to people on Lin",
+        "author": {
+            "realName": "Anonymous User",
+            "userAvatar": "https://assets.leetcode.com/users/default_avatar.jpg",
+            "userSlug": "",
+            "userName": null,
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": null
+        },
+        "isOwner": false,
+        "isAnonymous": true,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-07T12:18:32.655640+00:00",
+        "updatedAt": "2026-03-07T12:18:32.655640+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7632296,
+        "hitCount": 134,
+        "reactions": [],
+        "tags": [
+            {
+                "name": "Career",
+                "slug": "career",
+                "tagType": null
+            },
+            {
+                "name": "Feedback",
+                "slug": "feedback",
+                "tagType": null
+            },
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            }
+        ],
+        "topic": {
+            "id": 7632296,
+            "topLevelCommentCount": 1
+        }
+    },
+    {
+        "uuid": "ZBE258dH",
+        "title": "PayU Interview Experience \u2013 Senior Software Engineer (Bangalore)",
+        "slug": "payu-interview-experience-senior-softwar-xp9g",
+        "summary": "I recently attended an interview with PayU for a Senior Software Engineer role in Bangalore. The interview process typically consists of 4\u20135 rounds covering DSA, system design, and backend engineering concepts.Round 1 \u2013 DSA & Backend FundamentalsThe",
+        "author": {
+            "realName": "Sneha",
+            "userAvatar": "https://assets.leetcode.com/users/SnehaDohre/avatar_1760022825.png",
+            "userSlug": "SnehaDohre",
+            "userName": "SnehaDohre",
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": {
+                "icon": "https://assets.leetcode.com/static_assets/others/lg2550.png",
+                "displayName": "50 Days Badge 2025"
+            }
+        },
+        "isOwner": false,
+        "isAnonymous": false,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-07T18:24:21.848851+00:00",
+        "updatedAt": "2026-03-07T18:24:21.848851+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7633036,
+        "hitCount": 190,
+        "reactions": [],
+        "tags": [
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            }
+        ],
+        "topic": {
+            "id": 7633036,
+            "topLevelCommentCount": 0
+        }
+    },
+    {
+        "uuid": "Zomh3jfJ",
+        "title": "SDE intern amazon - virtual interview questions",
+        "slug": "swe-intern-amazon-virtual-interview-ques-k7r5",
+        "summary": "Hi there,\nI have a virtual interview for SDE intern in amazon,\nsomeone made the proccess recently and knows what to expect?\nsomeone remembers questions that you have been asked for this role?\nThanks!!",
+        "author": {
+            "realName": "maor12341",
+            "userAvatar": "https://assets.leetcode.com/users/default_avatar.jpg",
+            "userSlug": "maor12341",
+            "userName": "maor12341",
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": null
+        },
+        "isOwner": false,
+        "isAnonymous": false,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-07T14:29:04.335042+00:00",
+        "updatedAt": "2026-03-07T14:29:38.095728+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7632533,
+        "hitCount": 198,
+        "reactions": [],
+        "tags": [
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            }
+        ],
+        "topic": {
+            "id": 7632533,
+            "topLevelCommentCount": 3
+        }
+    },
+    {
+        "uuid": "gfRv56BS",
+        "title": "Pure Storage Interview",
+        "slug": "pure-storage-interview-by-anonymous_user-mawa",
+        "summary": "Hi,Can anyone share the pointers or expectations and questions around for Pure Storage company for MTS 5?",
+        "author": {
+            "realName": "Anonymous User",
+            "userAvatar": "https://assets.leetcode.com/users/default_avatar.jpg",
+            "userSlug": "",
+            "userName": null,
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": null
+        },
+        "isOwner": false,
+        "isAnonymous": true,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-07T12:55:30.157009+00:00",
+        "updatedAt": "2026-03-07T12:55:30.157009+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7632371,
+        "hitCount": 36,
+        "reactions": [],
+        "tags": [
+            {
+                "name": "Pure Storage",
+                "slug": "pure-storage",
+                "tagType": "COMPANY"
+            },
+            {
+                "name": "Career",
+                "slug": "career",
+                "tagType": null
+            },
+            {
+                "name": "Feedback",
+                "slug": "feedback",
+                "tagType": null
+            },
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            }
+        ],
+        "topic": {
+            "id": 7632371,
+            "topLevelCommentCount": 0
+        }
+    },
+    {
+        "uuid": "RNCxkSCr",
+        "title": "Summer 2026 SDE Intern Interview \u2014 What Are the Two Interviews About?",
+        "slug": "summer-2026-sde-intern-interview-what-ar-tk1p",
+        "summary": "anyone who has recently gone through the summer 2026 sde intern interview process? i\u2019m trying to understand what the two interviews mentioned in the process are about.from what i\u2019ve heard, each interview is around an hour and includes both a leetcode",
+        "author": {
+            "realName": "Anonymous User",
+            "userAvatar": "https://assets.leetcode.com/users/default_avatar.jpg",
+            "userSlug": "",
+            "userName": null,
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": null
+        },
+        "isOwner": false,
+        "isAnonymous": true,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-07T19:53:35.494660+00:00",
+        "updatedAt": "2026-03-07T19:53:35.494660+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7633178,
+        "hitCount": 13,
+        "reactions": [],
+        "tags": [
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            }
+        ],
+        "topic": {
+            "id": 7633178,
+            "topLevelCommentCount": 0
+        }
+    },
+    {
+        "uuid": "zjX67UGM",
+        "title": "Coding Problems Discuss Club ",
+        "slug": "coding-problems-discuss-club-by-anonymou-zky4",
+        "summary": "Hello Everyone ,I created a Dicord group where we can discuss problems and share insights on coding problems ,you can can also share sloutions to the problems ,intuitions , logic ,methodologies .In this group you can also ask doubts or solve others d",
+        "author": {
+            "realName": "Anonymous User",
+            "userAvatar": "https://assets.leetcode.com/users/default_avatar.jpg",
+            "userSlug": "",
+            "userName": null,
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": null
+        },
+        "isOwner": false,
+        "isAnonymous": true,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-07T11:01:41.245954+00:00",
+        "updatedAt": "2026-03-07T11:01:41.245954+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7632164,
+        "hitCount": 53,
+        "reactions": [
+            {
+                "count": 1,
+                "reactionType": "UPVOTE"
+            }
+        ],
+        "tags": [
+            {
+                "name": "LeetCode",
+                "slug": "leetcode",
+                "tagType": "COMPANY"
+            },
+            {
+                "name": "Career",
+                "slug": "career",
+                "tagType": null
+            },
+            {
+                "name": "MySQL",
+                "slug": "mysql",
+                "tagType": null
+            },
+            {
+                "name": "Machine Learning Engineer",
+                "slug": "machine-learning-engineer",
+                "tagType": null
+            },
+            {
+                "name": "Machine Learning",
+                "slug": "machine-learning",
+                "tagType": null
+            },
+            {
+                "name": "DSA",
+                "slug": "dsa",
+                "tagType": null
+            },
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            },
+            {
+                "name": "Data Scientist / Data Engineer",
+                "slug": "data-scientist-data-engineer",
+                "tagType": null
+            },
+            {
+                "name": "Data Analyst / Business Analyst",
+                "slug": "data-analyst-business-analyst",
+                "tagType": null
+            }
+        ],
+        "topic": {
+            "id": 7632164,
+            "topLevelCommentCount": 0
+        }
+    },
+    {
+        "uuid": "dck1GkZA",
+        "title": "JP Morgan Superday 6th March SDE2/SDE3",
+        "slug": "jp-morgan-superday-6th-march-sde2sde3-by-b4ni",
+        "summary": "JP Morgan Chase Superday completed for SDE2/SDE3 roles on 6th March. Did anyone who attended the Cohort got any updates regarding this.",
+        "author": {
+            "realName": "avCodes",
+            "userAvatar": "https://assets.leetcode.com/users/default_avatar.jpg",
+            "userSlug": "avcodes",
+            "userName": "avCodes",
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": null
+        },
+        "isOwner": false,
+        "isAnonymous": false,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-07T11:46:52.879877+00:00",
+        "updatedAt": "2026-03-07T11:46:52.879877+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7632248,
+        "hitCount": 35,
+        "reactions": [],
+        "tags": [
+            {
+                "name": "Feedback",
+                "slug": "feedback",
+                "tagType": null
+            },
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            }
+        ],
+        "topic": {
+            "id": 7632248,
+            "topLevelCommentCount": 0
+        }
+    },
+    {
+        "uuid": "JKKC5m1o",
+        "title": "Microsoft Interview",
+        "slug": "microsoft-interview-by-anonymous_user-9csy",
+        "summary": "I had given 2 rounds of interview on the same day last week.\nWhat are the chances of getting call for next rounds?\nIn the application center it still shows \"Screen\".Update as of 8/3 - It still shows \"Screen\" but still no invite for next rounds. I thi",
+        "author": {
+            "realName": "Anonymous User",
+            "userAvatar": "https://assets.leetcode.com/users/default_avatar.jpg",
+            "userSlug": "",
+            "userName": null,
+            "nameColor": null,
+            "certificationLevel": "NORMAL",
+            "activeBadge": null
+        },
+        "isOwner": false,
+        "isAnonymous": true,
+        "isSerialized": false,
+        "scoreInfo": null,
+        "articleType": "DISCUSSION",
+        "thumbnail": "",
+        "createdAt": "2026-03-04T12:26:07.223520+00:00",
+        "updatedAt": "2026-03-08T03:24:57.429954+00:00",
+        "status": "OPEN",
+        "isLeetcode": false,
+        "canSee": true,
+        "canEdit": false,
+        "isMyFavorite": false,
+        "myReactionType": null,
+        "topicId": 7624745,
+        "hitCount": 532,
+        "reactions": [],
+        "tags": [
+            {
+                "name": "Microsoft",
+                "slug": "microsoft",
+                "tagType": "COMPANY"
+            },
+            {
+                "name": "Interview",
+                "slug": "interview",
+                "tagType": null
+            }
+        ],
+        "topic": {
+            "id": 7624745,
+            "topLevelCommentCount": 5
+        }
+    }
+]

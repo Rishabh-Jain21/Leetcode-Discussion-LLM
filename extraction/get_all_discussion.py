@@ -1,5 +1,9 @@
 import requests
 import json
+import os
+from datetime import datetime
+
+from helpers.utils import merge_topics
 
 
 def get_links(skip: int = 0, first: int = 1000, tag_slugs: list[str] = ["interview"]):
@@ -101,9 +105,9 @@ def get_links(skip: int = 0, first: int = 1000, tag_slugs: list[str] = ["intervi
 
     response = requests.post(url, json=payload, headers=headers, cookies=cookies)
 
-    print(response.status_code)
+    # print(response.status_code)
     json_response = response.json()
-    print(json_response)
+    # print(json_response)
     return json_response["data"]["ugcArticleDiscussionArticles"]["edges"]
 
 
@@ -116,7 +120,20 @@ for high in range(1000, 4001, 1000):
     print(len(data))
 
     all_data.extend(data)
-    break
 
-with open("data.json", "w") as f:
-    f.write(json.dumps(all_data, indent=4))
+merged_list = all_data
+updated_topic_ids_list = []
+
+if os.path.exists("data.json"):
+    with open("data.json", "r") as reader_obj:
+        read_data = json.load(reader_obj)
+
+    merged_list, updated_topic_ids_list = merge_topics(read_data, all_data)
+
+
+with open("data_merged.json", "w") as f:
+    f.write(json.dumps(merged_list, indent=4))
+
+with open("updated.json", "w") as f:
+    f.write(json.dumps(updated_topic_ids_list, indent=4))
+print(len(updated_topic_ids_list))
