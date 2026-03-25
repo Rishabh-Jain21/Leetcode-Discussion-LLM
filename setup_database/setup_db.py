@@ -128,6 +128,65 @@ def create_tables():
     """)
 
     # ---------------------------------------------------------------
+    # 6. interview_experiences
+    #    Structured data extracted from discussion content via LLM.
+    #    Stores whether a post is an actual interview experience,
+    #    role, rounds, questions, salary, and all enriched data.
+    #    Linked leetcode posts are merged into the parent row.
+    #    Isolated per company.
+    # ---------------------------------------------------------------
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS interview_experiences (
+            company_name            TEXT NOT NULL,
+            topic_id                INTEGER NOT NULL,
+            is_interview            INTEGER DEFAULT 0,
+            posted_at               TEXT,
+            interview_date          TEXT,
+            location                TEXT,
+            role                    TEXT,
+            experience_level        TEXT,
+            rounds_json             TEXT DEFAULT '[]',
+            result                  TEXT,
+            company_name_extracted  TEXT,
+            offered_salary          TEXT,
+            old_salary              TEXT,
+            compensation_json       TEXT DEFAULT '{}',
+            interview_type          TEXT,
+            difficulty              TEXT,
+            topics_json             TEXT DEFAULT '[]',
+            programming_langs_json  TEXT DEFAULT '[]',
+            tips                    TEXT,
+            process_duration        TEXT,
+            referral_used           TEXT,
+            team_or_org             TEXT,
+            has_images              INTEGER DEFAULT 0,
+            linked_post_ids_json    TEXT DEFAULT '[]',
+            processed_urls_json     TEXT DEFAULT '[]',
+            other_details           TEXT,
+            raw_llm_response        TEXT,
+            processed_at            TEXT,
+            PRIMARY KEY (company_name, topic_id),
+            FOREIGN KEY (company_name, topic_id)
+                REFERENCES company_discussion_content(company_name, topic_id)
+        )
+    """)
+
+    # ---------------------------------------------------------------
+    # 7. failed_processing
+    #    Tracks posts that failed during LLM processing.
+    #    Used by retry_failed() to re-process only failures on demand.
+    # ---------------------------------------------------------------
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS failed_processing (
+            company_name    TEXT NOT NULL,
+            topic_id        INTEGER NOT NULL,
+            error           TEXT,
+            failed_at       TEXT,
+            PRIMARY KEY (company_name, topic_id)
+        )
+    """)
+
+    # ---------------------------------------------------------------
     # Indexes for the query patterns used in the codebase
     # ---------------------------------------------------------------
 
@@ -159,6 +218,12 @@ def create_tables():
     cursor.execute("""
         CREATE INDEX IF NOT EXISTS idx_company_pending_company
         ON company_pending_updates(company_name)
+    """)
+
+    # Filter interview experiences by company and is_interview flag
+    cursor.execute("""
+        CREATE INDEX IF NOT EXISTS idx_interview_exp_company
+        ON interview_experiences(company_name, is_interview)
     """)
 
     conn.commit()
