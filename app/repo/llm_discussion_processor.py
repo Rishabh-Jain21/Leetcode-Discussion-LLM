@@ -5,8 +5,8 @@ import time
 import requests
 from datetime import datetime, timezone
 
-from setup_database.setup_db import get_connection
-from llm_model.llm_worker import InterviewWorker, ImageWorker, IMAGE_INSTRUCTION
+from app.setup_database.setup_db import get_connection
+from app.llm_model.llm_worker import LLMWorker, IMAGE_INSTRUCTION
 
 
 def _status(msg):
@@ -18,10 +18,10 @@ def _status(msg):
 
 class InterviewProcessor:
 
-    def __init__(self, company_name):
+    def __init__(self, company_name, limit=50):
         self.company_name = company_name
-        self.worker = InterviewWorker()
-        self.vision_worker = ImageWorker()
+        self.worker = LLMWorker()
+        self.limit: int= limit
 
     # ------------------------------------------------------------------
     # Load posts that have content but haven't been processed yet
@@ -34,7 +34,6 @@ class InterviewProcessor:
             SELECT
                 cd.topic_id,
                 d.title,
-                d.summary,
                 d.created_at AS posted_at,
                 cd.content,
                 cd.assets_urls_json,
@@ -42,13 +41,13 @@ class InterviewProcessor:
             FROM company_discussion_content cd
             JOIN company_discussions d
                 ON cd.company_name = d.company_name AND cd.topic_id = d.topic_id
-            WHERE cd.company_name = ?
+            WHERE cd.company_name = %(company_name)s
               AND (cd.company_name, cd.topic_id) NOT IN (
                   SELECT company_name, topic_id FROM interview_experiences
-                  WHERE company_name = ?
+                  WHERE company_name = %(company_name)s
               )
             """,
-            (self.company_name, self.company_name),
+            {"company_name": self.company_name},
         )
         rows = [dict(row) for row in cursor.fetchall()]
         conn.close()
@@ -63,7 +62,6 @@ class InterviewProcessor:
             SELECT
                 cd.topic_id,
                 d.title,
-                d.summary,
                 d.created_at AS posted_at,
                 cd.content,
                 cd.assets_urls_json,
@@ -79,14 +77,36 @@ class InterviewProcessor:
         conn.close()
         return rows
 
-    # ------------------------------------------------------------------
-    # Main processing loop
-    # ------------------------------------------------------------------
+    def _save_failed(self, topic_id, error):
+        conn = get_connection()
+        conn.execute(
+            """
+            INSERT INTO failed_processing (company_name, topic_id, error, failed_at)
+            VALUES (?, ?, ?, ?)
+            ON CONFLICT(company_name, topic_id) DO UPDATE SET
+                error = excluded.error,
+                failed_at = excluded.failed_at
+            """,
+            (
+                self.company_name,
+                topic_id,
+                error,
+                datetime.now(timezone.utc).isoformat(),
+            ),
+        )
+        conn.commit()
+        conn.close()
+
     def reprocess_all(self):
+        # ------------------------------------------------------------------
+        # Main processing loop
+        # ------------------------------------------------------------------
         """Re-run ALL posts through LLM (overwrites existing results)."""
         posts = self.load_all()
         total = len(posts)
-        print(f"[{self.company_name}] REPROCESSING {total} posts (overwriting existing)")
+        print(
+            f"[{self.company_name}] REPROCESSING {total} posts (overwriting existing)"
+        )
 
         done, failed, consecutive_fails = 0, 0, 0
         for i, post in enumerate(posts, 1):
@@ -97,6 +117,8 @@ class InterviewProcessor:
                 consecutive_fails = 0
                 _status(f"[{i}/{total}] Done: {title}...")
                 print()
+                if done == self.limit:
+                    break
             except Exception as e:
                 failed += 1
                 consecutive_fails += 1
@@ -109,7 +131,7 @@ class InterviewProcessor:
 
         print(f"\nReprocess finished: {done} done, {failed} failed, {total} total")
 
-    def process_all(self):
+    def process_all_updates(self):
         posts = self.load_unprocessed()
         total = len(posts)
         print(f"[{self.company_name}] {total} posts to process")
@@ -122,6 +144,8 @@ class InterviewProcessor:
                 done += 1
                 consecutive_fails = 0
                 _status(f"[{i}/{total}] Done: {title}...")
+                if done == self.limit:
+                    break
                 print()
             except Exception as e:
                 failed += 1
@@ -166,21 +190,6 @@ class InterviewProcessor:
 
         print(f"\nRetry finished: {done} done, {still_failed} still failed")
 
-    def _save_failed(self, topic_id, error):
-        conn = get_connection()
-        conn.execute(
-            """
-            INSERT INTO failed_processing (company_name, topic_id, error, failed_at)
-            VALUES (?, ?, ?, ?)
-            ON CONFLICT(company_name, topic_id) DO UPDATE SET
-                error = excluded.error,
-                failed_at = excluded.failed_at
-            """,
-            (self.company_name, topic_id, error, datetime.now(timezone.utc).isoformat()),
-        )
-        conn.commit()
-        conn.close()
-
     def _clear_failed(self, topic_id):
         conn = get_connection()
         conn.execute(
@@ -220,7 +229,6 @@ class InterviewProcessor:
         tag = f"[{idx}/{total}]"
         topic_id = post["topic_id"]
         title = post["title"] or ""
-        summary = post["summary"] or ""
         content = post["content"] or ""
         posted_at = post["posted_at"]
         assets_urls = json.loads(post["assets_urls_json"] or "[]")
@@ -229,8 +237,9 @@ class InterviewProcessor:
         # --- Step 1: Text-only LLM pass ---
         _status(f"{tag} Sending text to LLM: {short_title}...")
         t0 = time.time()
-        prompt_text = f"Title: {title}\nSummary: {summary}\n\nContent:\n{content}"
+        prompt_text = f"Title: {title}\n\nContent:\n{content}"
         llm_result = self.worker.run(prompt_text)
+        print(llm_result)
         elapsed = time.time() - t0
         _status(f"{tag} Text LLM responded in {elapsed:.1f}s: {short_title}...")
 
@@ -246,9 +255,11 @@ class InterviewProcessor:
             _status(f"{tag} Downloading {len(assets_urls)} image(s): {short_title}...")
             image_parts = self._download_images(assets_urls)
             if image_parts:
-                _status(f"{tag} Sending {len(image_parts)} image(s) to vision model: {short_title}...")
+                _status(
+                    f"{tag} Sending {len(image_parts)} image(s) to vision model: {short_title}..."
+                )
                 t0 = time.time()
-                vision_result = self.vision_worker.run(
+                vision_result = self.worker.run(
                     f"Post title: {title}\nAnalyze these {len(image_parts)} image(s) from this interview discussion post.",
                     image_parts=image_parts,
                     system_instruction=IMAGE_INSTRUCTION,
@@ -257,7 +268,7 @@ class InterviewProcessor:
                 _status(f"{tag} Vision responded in {elapsed:.1f}s: {short_title}...")
                 if isinstance(vision_result, list):
                     vision_result = vision_result[0] if vision_result else None
-                if isinstance(vision_result, dict):
+                elif isinstance(vision_result, dict):
                     llm_result = self._merge_results(llm_result, vision_result)
 
         # --- Step 3: Process URLs ---
@@ -290,10 +301,10 @@ class InterviewProcessor:
         # --- Step 5: Fetch linked leetcode discussion posts and merge ---
         linked_post_ids = url_data["linked_post_ids"]
         if linked_post_ids:
-            _status(f"{tag} Fetching {len(linked_post_ids)} linked post(s): {short_title}...")
-            llm_result = self.fetch_and_merge_linked_posts(
-                linked_post_ids, llm_result
+            _status(
+                f"{tag} Fetching {len(linked_post_ids)} linked post(s): {short_title}..."
             )
+            llm_result = self.fetch_and_merge_linked_posts(linked_post_ids, llm_result)
 
         # --- Step 6: Save to DB ---
         _status(f"{tag} Saving to DB: {short_title}...")
@@ -304,10 +315,10 @@ class InterviewProcessor:
             url_data=url_data,
         )
 
-    # ------------------------------------------------------------------
-    # URL processing: classify and extract info from URLs
-    # ------------------------------------------------------------------
     def process_urls(self, assets_urls, other_urls):
+        # ------------------------------------------------------------------
+        # URL processing: classify and extract info from URLs
+        # ------------------------------------------------------------------
         has_images = len(assets_urls) > 0
         leetcode_problem_links = []
         linked_post_ids = []
@@ -317,9 +328,7 @@ class InterviewProcessor:
 
         for url in all_urls:
             # LeetCode problem link (e.g. leetcode.com/problems/two-sum/)
-            problem_match = re.search(
-                r"leetcode\.com/problems/([\w-]+)", url
-            )
+            problem_match = re.search(r"leetcode\.com/problems/([\w-]+)", url)
             if problem_match:
                 slug = problem_match.group(1)
                 full_link = f"https://leetcode.com/problems/{slug}/"
@@ -354,7 +363,7 @@ class InterviewProcessor:
             "valid_external_urls": valid_external_urls,
         }
 
-    def _download_images(self, asset_urls, max_images=5):
+    def _download_images(self, asset_urls, max_images=10):
         parts = []
         for url in asset_urls[:max_images]:
             try:
@@ -380,10 +389,10 @@ class InterviewProcessor:
             pass
         return None
 
-    # ------------------------------------------------------------------
-    # Fetch linked leetcode discussion posts and merge into parent result
-    # ------------------------------------------------------------------
     def fetch_and_merge_linked_posts(self, linked_topic_ids, parent_result):
+        # ------------------------------------------------------------------
+        # Fetch linked leetcode discussion posts and merge into parent result
+        # ------------------------------------------------------------------
         for tid in linked_topic_ids:
             try:
                 # Try DB first (any company — linked post may be from a different one)
@@ -415,7 +424,7 @@ class InterviewProcessor:
                 if assets_urls:
                     image_parts = self._download_images(assets_urls)
                     if image_parts:
-                        vision_result = self.vision_worker.run(
+                        vision_result = self.worker.run(
                             f"Post title: {title}\nAnalyze these {len(image_parts)} image(s) from a linked interview discussion post.",
                             image_parts=image_parts,
                             system_instruction=IMAGE_INSTRUCTION,
@@ -423,7 +432,9 @@ class InterviewProcessor:
                         if isinstance(vision_result, list):
                             vision_result = vision_result[0] if vision_result else None
                         if isinstance(vision_result, dict):
-                            linked_result = self._merge_results(linked_result, vision_result)
+                            linked_result = self._merge_results(
+                                linked_result, vision_result
+                            )
 
                 parent_result = self._merge_results(parent_result, linked_result)
             except Exception as e:
@@ -502,9 +513,17 @@ class InterviewProcessor:
 
         # Fill empty parent fields from linked post
         fill_fields = [
-            "role", "location", "experience_level", "result",
-            "offered_salary", "old_salary", "interview_type",
-            "difficulty", "tips", "process_duration", "referral_used",
+            "role",
+            "location",
+            "experience_level",
+            "result",
+            "offered_salary",
+            "old_salary",
+            "interview_type",
+            "difficulty",
+            "tips",
+            "process_duration",
+            "referral_used",
             "team_or_org",
         ]
         for field in fill_fields:
@@ -522,10 +541,10 @@ class InterviewProcessor:
 
         return parent
 
-    # ------------------------------------------------------------------
-    # Save extracted data to interview_experiences table
-    # ------------------------------------------------------------------
     def save_result(self, topic_id, posted_at, llm_result, url_data):
+        # ------------------------------------------------------------------
+        # Save extracted data to interview_experiences table
+        # ------------------------------------------------------------------
         conn = get_connection()
         cursor = conn.cursor()
 
@@ -608,33 +627,8 @@ class InterviewProcessor:
         conn.commit()
         conn.close()
 
-    def _empty_result(self):
-        return {
-            "is_interview": False,
-            "company_name": "",
-            "role": "",
-            "interview_date": "",
-            "location": "",
-            "experience_level": "",
-            "rounds": [],
-            "result": "unknown",
-            "offered_salary": "",
-            "old_salary": "",
-            "compensation": {},
-            "interview_type": "",
-            "difficulty": "",
-            "topics_covered": [],
-            "programming_languages": [],
-            "tips": "",
-            "process_duration": "",
-            "referral_used": "",
-            "team_or_org": "",
-            "other_details": "",
-        }
-
 
 if __name__ == "__main__":
-    import sys
 
     company = sys.argv[1] if len(sys.argv) > 1 else "amazon"
     processor = InterviewProcessor(company)
@@ -644,4 +638,4 @@ if __name__ == "__main__":
     elif "--reprocess" in sys.argv:
         processor.reprocess_all()
     else:
-        processor.process_all()
+        processor.process_all_updates()

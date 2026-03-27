@@ -1,21 +1,20 @@
 import json
 from datetime import datetime
 
-from setup_database.setup_db import get_connection
+from app.setup_database.setup_db import get_connection
 
 
 def merge_topics_to_db(new_api_data):
     """
-    Replaces merge_topics + JSON file writes.
-    Takes raw API edges, upserts into raw_discussions,
-    and populates updated_raw_nodes with changed/new entries.
+    Takes raw API edges, upserts into raw_short_discussions,
+    and populates updated_raw_short_discussions with changed/new entries.
     Returns count of changed nodes.
     """
     conn = get_connection()
     cursor = conn.cursor()
 
     # Clear previous run's updated nodes
-    cursor.execute("DELETE FROM updated_raw_nodes")
+    cursor.execute("DELETE FROM updated_raw_short_discussions")
 
     changed_count = 0
 
@@ -27,7 +26,7 @@ def merge_topics_to_db(new_api_data):
 
         # Check if this topic already exists
         cursor.execute(
-            "SELECT updated_at FROM raw_discussions WHERE topic_id = ?",
+            "SELECT updated_at FROM raw_short_discussions WHERE topic_id = ?",
             (topic_id,),
         )
         row = cursor.fetchone()
@@ -40,10 +39,10 @@ def merge_topics_to_db(new_api_data):
             is_newer = incoming_updated > existing_updated
 
         if is_new or is_newer:
-            # Upsert into raw_discussions
+            # Upsert into raw_short_discussions
             cursor.execute(
                 """
-                INSERT INTO raw_discussions
+                INSERT INTO raw_short_discussions
                     (topic_id, uuid, title, slug, summary, created_at, updated_at, tags_json)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                 ON CONFLICT(topic_id) DO UPDATE SET
@@ -70,7 +69,7 @@ def merge_topics_to_db(new_api_data):
             # Record as changed node
             cursor.execute(
                 """
-                INSERT INTO updated_raw_nodes
+                INSERT INTO updated_raw_short_discussions
                     (topic_id, title, slug, summary, created_at, updated_at, tags_json)
                 VALUES (?, ?, ?, ?, ?, ?, ?)
                 ON CONFLICT(topic_id) DO UPDATE SET
@@ -100,7 +99,6 @@ def merge_topics_to_db(new_api_data):
 
 def merge_company_discussions_to_db(company_name, new_items):
     """
-    Replaces merge_topics_items + JSON file writes for company data.
     Upserts into company_discussions and tracks changed items
     in company_pending_updates.
     Returns count of changed nodes.

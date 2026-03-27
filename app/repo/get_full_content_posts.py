@@ -5,10 +5,10 @@ import json
 import re
 from datetime import datetime
 
-from setup_database.setup_db import get_connection
+from app.setup_database.setup_db import get_connection
 
 
-class DiscussionDB:
+class Discussion:
     def __init__(self, company_name):
         self.company_name = company_name
         self.all_content_json: list = []

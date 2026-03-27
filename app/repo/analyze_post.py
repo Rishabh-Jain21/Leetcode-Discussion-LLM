@@ -6,13 +6,14 @@ Usage:
     python -m queries.analyze_post https://leetcode.com/discuss/post/7178524/...
     python -m queries.analyze_post 7178524
 """
+
 import json
 import re
 import sys
 import time
 import requests
-
-from llm_model.llm_worker import InterviewWorker, ImageWorker, IMAGE_INSTRUCTION
+import os
+from app.llm_model.llm_worker import LLMWorker, IMAGE_INSTRUCTION
 
 
 # ── GraphQL fetch ─────────────────────────────────────────────────
@@ -57,12 +58,11 @@ def fetch_post(topic_id):
 
 # ── URL helpers ───────────────────────────────────────────────────
 
+
 def extract_urls(text):
     """Extract and group URLs from post content."""
     md_urls = re.findall(r"\((https?://[^\s)]+)\)", text)
-    all_urls = re.findall(
-        r"(?:https?://)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}[^\s)\]]*", text
-    )
+    all_urls = re.findall(r"(?:https?://)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}[^\s)\]]*", text)
     urls = list(set(md_urls + all_urls))
 
     assets, others = [], []
@@ -134,15 +134,14 @@ def extract_leetcode_links(urls):
 
 # ── Merge helper ──────────────────────────────────────────────────
 
+
 def merge_results(parent, linked):
     """Merge linked post LLM result into parent."""
     parent_rounds = parent.get("rounds", [])
     linked_rounds = linked.get("rounds", [])
 
     if linked_rounds:
-        max_round = max(
-            (r.get("round_number", 0) for r in parent_rounds), default=0
-        )
+        max_round = max((r.get("round_number", 0) for r in parent_rounds), default=0)
         for r in linked_rounds:
             r["round_number"] = max_round + r.get("round_number", 1)
             r["round_type"] = f"[From Linked Post] {r.get('round_type', 'Unknown')}"
@@ -163,6 +162,7 @@ def merge_results(parent, linked):
 
 # ── Main analysis ─────────────────────────────────────────────────
 
+
 def analyze_post(input_str):
     """Full pipeline: fetch → extract → LLM → return structured JSON."""
     topic_id = extract_topic_id(input_str)
@@ -182,10 +182,12 @@ def analyze_post(input_str):
     all_urls = asset_urls + other_urls
     problem_links, linked_post_ids = extract_leetcode_links(all_urls)
 
-    print(f"  Images: {len(asset_urls)}  |  Links: {len(other_urls)}  |  Linked posts: {len(linked_post_ids)}")
+    print(
+        f"  Images: {len(asset_urls)}  |  Links: {len(other_urls)}  |  Linked posts: {len(linked_post_ids)}"
+    )
 
     # Step 1: Text LLM
-    worker = InterviewWorker()
+    worker = LLMWorker()
     print("  Running text analysis...")
     t0 = time.time()
     prompt = f"Title: {title}\n\nContent:\n{content}"
@@ -203,7 +205,7 @@ def analyze_post(input_str):
         print(f"  Downloading {len(asset_urls)} image(s)...")
         image_parts = download_images(asset_urls)
         if image_parts:
-            vision_worker = ImageWorker()
+            vision_worker = LLMWorker()
             print(f"  Running vision analysis on {len(image_parts)} image(s)...")
             t0 = time.time()
             vision_result = vision_worker.run(
@@ -222,13 +224,17 @@ def analyze_post(input_str):
         rounds = result.get("rounds", [])
         if rounds:
             for link in problem_links:
-                rounds[-1].setdefault("questions", []).append(f"[Linked Problem] {link}")
+                rounds[-1].setdefault("questions", []).append(
+                    f"[Linked Problem] {link}"
+                )
         else:
-            result["rounds"] = [{
-                "round_number": 1,
-                "round_type": "Unknown",
-                "questions": [f"[Linked Problem] {link}" for link in problem_links],
-            }]
+            result["rounds"] = [
+                {
+                    "round_number": 1,
+                    "round_type": "Unknown",
+                    "questions": [f"[Linked Problem] {link}" for link in problem_links],
+                }
+            ]
 
     # Step 4: Fetch and merge linked discussion posts
     if linked_post_ids:
@@ -255,8 +261,8 @@ def analyze_post(input_str):
                 if linked_assets:
                     linked_images = download_images(linked_assets)
                     if linked_images:
-                        if not hasattr(analyze_post, '_vision_worker'):
-                            analyze_post._vision_worker = ImageWorker()
+                        if not hasattr(analyze_post, "_vision_worker"):
+                            analyze_post._vision_worker = LLMWorker()
                         vr = analyze_post._vision_worker.run(
                             f"Post title: {linked_title}\nAnalyze these {len(linked_images)} image(s).",
                             image_parts=linked_images,
@@ -280,7 +286,9 @@ def analyze_post(input_str):
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage: python -m queries.analyze_post <url_or_topic_id>")
-        print("  e.g. python -m queries.analyze_post https://leetcode.com/discuss/post/7178524/...")
+        print(
+            "  e.g. python -m queries.analyze_post https://leetcode.com/discuss/post/7178524/..."
+        )
         print("  e.g. python -m queries.analyze_post 7178524")
         sys.exit(1)
 
@@ -293,7 +301,7 @@ if __name__ == "__main__":
 
         # Optionally save
         if len(sys.argv) > 2 and sys.argv[2] == "--save":
-            import os
+
             out_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
             os.makedirs(out_dir, exist_ok=True)
             topic_id = extract_topic_id(input_arg)
